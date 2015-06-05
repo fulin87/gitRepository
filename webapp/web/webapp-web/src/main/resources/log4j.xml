@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n" /> -->
+			<param name="ConversionPattern" value="[%p] %-d{yyyy-MM-dd HH:mm:ss} [%c][%L]- %m%n" />
+		</layout>
+		<!-- <filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="info" />
+		</filter> -->
+	</appender>
+
+	<appender name="webapp" class="org.apache.log4j.FileAppender">
+		<param name="Append" value="false" />
+		<param name="file" value="../logs/webapp.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="webapp" />
+	</root>
+
+	
+</log4j:configuration>
