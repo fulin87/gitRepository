@@ -3,4 +3,4 @@ Git is free software
 this is a test
 this is a test2
 Git has a mutable index called stage
-Git tracks changes
+Git tracks change
